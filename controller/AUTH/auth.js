@@ -58,7 +58,8 @@ const register = async (req, res, next) => {
             firstname: firstname,
             lastname: lastname,
             email: email,
-            password: hashedPassword
+            password: hashedPassword,
+            verification: false
         });
 
         const userRole = await Role.find({

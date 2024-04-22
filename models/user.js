@@ -1,3 +1,5 @@
+const { request } = require("express");
+const { verify } = require("jsonwebtoken");
 const mongoose = require("mongoose");
 
 const User = mongoose.model(
@@ -25,6 +27,10 @@ const User = mongoose.model(
         required: true,
         trim: true,
         minlength: 6
+    },
+    verification:{
+      type:Boolean,
+      required:true
     },
     roles: [
       {

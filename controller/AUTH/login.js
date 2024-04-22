@@ -33,12 +33,10 @@ const login = async (req, res, next) => {
 
     const authorities = user.roles.map(role => "ROLE_" + role.name.toUpperCase());
 
+    const {_doc} = user
+
     return res.status(200).json({
-      id: user._id,
-      email: user.email,
-      email: user.email,
-      roles: authorities,
-      accessToken: token
+      ..._doc , accessToken: token
     });
   } catch (error) {
     console.error("Login error:", error);
