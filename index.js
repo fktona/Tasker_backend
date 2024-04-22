@@ -14,7 +14,7 @@ const db = require("./models");
 app.use('/api/auth' , auth)
 const Role = db.role;
 db.mongoose
-  .connect('mongodb://localhost:27017/Tasker', {
+  .connect('mongodb+srv://faithadetona:5YTCQBkiUsbQYwsu@taskers.fl9s570.mongodb.net/TYT?retryWrites=true&w=majority&appName=taskers', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
